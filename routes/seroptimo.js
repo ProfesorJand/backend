@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
     doshaInfo: {
       [VATA_ID]: {
         nombre: 'Vata',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${VATA_ID}aaa`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${VATA_ID}`,
         doshaURL: DOSHA_URL_VATA,
       },
       [PITTA_ID]: {
