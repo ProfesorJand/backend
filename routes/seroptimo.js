@@ -27,32 +27,32 @@ router.get('/', async (req, res) => {
     doshaInfo: {
       [VATA_ID]: {
         nombre: 'Vata',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJC8VUSHPD2PS`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}aaa`,
         doshaURL: DOSHA_URL_VATA,
       },
       [PITTA_ID]: {
         nombre: 'Pitta',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3PUP33ADCJX4`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
         doshaURL: DOSHA_URL_PITTA,
       },
       [KAPHA_ID]: {
         nombre: 'Kapha',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E3YZB2C7UTZXU`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
         doshaURL: DOSHA_URL_KAPHA,
       },
       [VATA_PITTA_ID]: {
         nombre: 'Vata - Pitta',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YJAURZSHQRR5L`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
         doshaURL: DOSHA_URL_VATA_PITTA,
       },
       [VATA_KAPHA_ID]: {
         nombre: 'Vata - Kapha',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BU744MRJJ6GU4`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
         doshaURL: DOSHA_URL_VATA_KAPHA,
       },
       [PITTA_KAPHA_ID]: {
         nombre: 'Pitta - Kapha',
-        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBKLE4B85GUNE`,
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
         doshaURL: DOSHA_URL_PITTA_KAPHA,
       },
       [TRIDOSHA_ID]: {
