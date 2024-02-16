@@ -1,6 +1,21 @@
 const { Router } = require('express');
 const TEMPLATE_ID = process.env.TEMPLATE_ID_DOSHA;
 const SERVICE_ID = process.env.SERVICE_ID_DOSHA;
+const EMAIL = process.env.EMAIL;
+const DOSHA_URL_VATA = process.env.DOSHA_URL_VATA;
+const DOSHA_URL_PITTA = process.env.DOSHA_URL_PITTA;
+const DOSHA_URL_KAPHA = process.env.DOSHA_URL_KAPHA;
+const DOSHA_URL_VATA_PITTA = process.env.DOSHA_URL_VATA_PITTA;
+const DOSHA_URL_VATA_KAPHA = process.env.DOSHA_URL_VATA_KAPHA;
+const DOSHA_URL_PITTA_KAPHA = process.env.DOSHA_URL_PITTA_KAPHA;
+const DOSHA_URL_TRIDOSHA = process.env.DOSHA_URL_TRIDOSHA;
+const VATA_ID = process.env.VATA_ID;
+const PITTA_ID = process.env.PITTA_ID;
+const KAPHA_ID = process.env.KAPHA_ID;
+const VATA_PITTA_ID = process.env.VATA_PITTA_ID;
+const VATA_KAPHA_ID = process.env.VATA_KAPHA_ID;
+const PITTA_KAPHA_ID = process.env.PITTA_KAPHA_ID;
+const TRIDOSHA_ID = process.env.TRIDOSHA_ID;
 
 const router = Router();
 
@@ -8,56 +23,42 @@ router.get('/', async (req, res) => {
   console.log('seroptimo-ejecutandose');
   return res.json({
     status: 200,
-    email: { TEMPLATE_ID, SERVICE_ID },
+    email: { TEMPLATE_ID, SERVICE_ID, EMAIL },
     doshaInfo: {
-      XJC8VUSHPD2PS: {
+      [VATA_ID]: {
         nombre: 'Vata',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJC8VUSHPD2PS',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/VATA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJC8VUSHPD2PS`,
+        doshaURL: DOSHA_URL_VATA,
       },
-      R3PUP33ADCJX4: {
+      [PITTA_ID]: {
         nombre: 'Pitta',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3PUP33ADCJX4',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/PITTA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R3PUP33ADCJX4`,
+        doshaURL: DOSHA_URL_PITTA,
       },
-      E3YZB2C7UTZXU: {
+      [KAPHA_ID]: {
         nombre: 'Kapha',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E3YZB2C7UTZXU',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/KAPHA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E3YZB2C7UTZXU`,
+        doshaURL: DOSHA_URL_KAPHA,
       },
-      YJAURZSHQRR5L: {
+      [VATA_PITTA_ID]: {
         nombre: 'Vata - Pitta',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YJAURZSHQRR5L',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/VATA_PITTA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YJAURZSHQRR5L`,
+        doshaURL: DOSHA_URL_VATA_PITTA,
       },
-      BU744MRJJ6GU4: {
+      [VATA_KAPHA_ID]: {
         nombre: 'Vata - Kapha',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BU744MRJJ6GU4',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/VATA_KAPHA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BU744MRJJ6GU4`,
+        doshaURL: DOSHA_URL_VATA_KAPHA,
       },
-      GBKLE4B85GUNE: {
+      [PITTA_KAPHA_ID]: {
         nombre: 'Pitta - Kapha',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBKLE4B85GUNE',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/PITTA_KAPHA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBKLE4B85GUNE`,
+        doshaURL: DOSHA_URL_PITTA_KAPHA,
       },
-      Y9E6FD7D5GQWG: {
+      [TRIDOSHA_ID]: {
         nombre: 'Tridosha',
-        paypalURL:
-          'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBKLE4B85GUNE',
-        doshaURL:
-          'https://guiadeparche.com/ser-optimo/avanzado/TRIDOSHA_AVANZADO.pdf',
+        paypalURL: `https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${TRIDOSHA_ID}`,
+        doshaURL: DOSHA_URL_TRIDOSHA,
       },
     },
   });
