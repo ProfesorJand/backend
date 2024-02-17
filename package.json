@@ -11,6 +11,7 @@
   "author": "Profesorjand",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.4.4",
     "nodemon": "^3.0.3"
   },
   "dependencies": {

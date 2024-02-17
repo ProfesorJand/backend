@@ -1,4 +1,6 @@
 const { Router } = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 const TEMPLATE_ID = process.env.TEMPLATE_ID_DOSHA;
 const SERVICE_ID = process.env.SERVICE_ID_DOSHA;
 const EMAIL = process.env.EMAIL;
