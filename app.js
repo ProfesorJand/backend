@@ -15,17 +15,11 @@ server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
-  // const allowedOrigins = ['http://localhost:3001', 'https://guiadeparche.com'];
-  // const origin = req.header('origin');
-  // if (allowedOrigins.includes(origin) || !origin) {
-
-  //   //res.header("Access-Control-Allow-Origin", "http://localhost:3000", "https://guiadeparche.com");
-  // } else {
-  //   console.log('origin else', origin);
-
-  // }
-
-  res.setHeader('Access-Control-Allow-Origin', 'https://guiadeparche.com'); // update to match the domain you will make the request from
+  const allowedOrigins = ['https://guiadeparche.com', 'https://profesorjand.github.io'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header(
