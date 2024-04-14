@@ -41,4 +41,19 @@ router.get('/meta', async (req, res) => {
   return res.json(meta);
 });
 
+router.post('/meta', async (req, res) => {
+  const { newComp, Tier } = req.body;
+  const meta = require('../json/tft/meta.json');
+  meta[Tier] = newComp;
+  console.log('meta-ejecutandose');
+  console.log(meta);
+  fs.writeFile('/json/tft/meta.json', JSON.stringify(meta), (err) => {
+    if (err) {
+      throw new Error('Something went wrong.');
+    }
+    console.log('JSON written to file. Contents:');
+  });
+  return res.json(meta);
+});
+
 module.exports = router;
