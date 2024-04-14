@@ -34,8 +34,11 @@ router.get('updateChampions', async (req, res) => {
   }
 });
 
-router.get('meta', async (req, res) => {
-  return { holameta: 'holameta' };
+router.get('/meta', async (req, res) => {
+  const meta = require('../json/tft/meta.json');
+  console.log('meta-ejecutandose');
+  console.log(meta);
+  return res.json(meta);
 });
 
 module.exports = router;
