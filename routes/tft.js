@@ -49,8 +49,9 @@ router.post('/meta', async (req, res) => {
   meta[Tier].push(newComp);
   console.log('meta-post-ejecutandose');
   console.log(meta);
+  console.log('dirname', __dirname);
   fs.writeFile(
-    '/json/tft/meta.json',
+    __dirname + '/../json/tft/meta.json',
     JSON.stringify(meta, null, ' '),
     (err) => {
       if (err) {
