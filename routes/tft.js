@@ -47,14 +47,19 @@ router.post('/meta', async (req, res) => {
   console.log('Tier', Tier);
   const meta = require('../json/tft/meta.json');
   meta[Tier].push(newComp);
-  console.log('meta-ejecutandose');
+  console.log('meta-post-ejecutandose');
   console.log(meta);
-  fs.writeFile('../json/tft/meta.json', JSON.stringify(meta), (err) => {
-    if (err) {
-      throw new Error('Something went wrong.', err);
+  fs.writeFile(
+    '../json/tft/meta.json',
+    JSON.stringify(meta, null, ' '),
+    (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log('JSON written to file. Contents:');
     }
-    console.log('JSON written to file. Contents:');
-  });
+  );
   return res.json(meta);
 });
 
