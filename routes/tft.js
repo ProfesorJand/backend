@@ -43,8 +43,10 @@ router.get('/meta', async (req, res) => {
 
 router.post('/meta', async (req, res) => {
   const { newComp, Tier } = req.body;
+  console.log('newComp', newComp);
+  console.log('Tier', Tier);
   const meta = require('../json/tft/meta.json');
-  meta[Tier] = newComp;
+  meta[Tier].push(newComp);
   console.log('meta-ejecutandose');
   console.log(meta);
   fs.writeFile('/json/tft/meta.json', JSON.stringify(meta), (err) => {
