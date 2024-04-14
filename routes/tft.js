@@ -34,4 +34,8 @@ router.get('updateChampions', async (req, res) => {
   }
 });
 
+router.get('meta', async (req, res) => {
+  return { holameta: 'holameta' };
+});
+
 module.exports = router;
