@@ -50,7 +50,7 @@ router.post('/meta', async (req, res) => {
   console.log('meta-post-ejecutandose');
   console.log(meta);
   fs.writeFile(
-    '../json/tft/meta.json',
+    '/json/tft/meta.json',
     JSON.stringify(meta, null, ' '),
     (err) => {
       if (err) {
