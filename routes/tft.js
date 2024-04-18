@@ -41,7 +41,7 @@ router.get('/meta', async (req, res) => {
   return res.json(meta);
 });
 
-router.post('/meta', async (req, res) => {
+router.put('/meta', async (req, res) => {
   const { newComp, Tier } = req.body;
   console.log('newComp', newComp);
   console.log('Tier', Tier);
@@ -62,6 +62,22 @@ router.post('/meta', async (req, res) => {
     }
   );
   return res.json(meta);
+});
+
+router.post('/meta', (req, res) => {
+  const newMeta = req.body;
+  fs.writeFile(
+    __dirname + '/../json/tft/meta.json',
+    JSON.stringify(newMeta, null, ' '),
+    (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log('JSON written to file. Contents:');
+    }
+  );
+  return res.json(newMeta);
 });
 
 module.exports = router;
